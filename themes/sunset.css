@@ -1,0 +1,23 @@
+/* Sunset — orange / pink / rose */
+:root[data-theme="sunset"] {
+  --bg: #0f0908;
+  --bg-glow-1: rgba(249, 115, 22, 0.18);
+  --bg-glow-2: rgba(236, 72, 153, 0.15);
+
+  --card-base: #120a0b;
+  --card-bg: rgba(255, 255, 255, 0.045);
+  --card-border: rgba(255, 200, 180, 0.10);
+  --card-border-strong: rgba(255, 200, 180, 0.20);
+
+  --aurora-1: #f97316;
+  --aurora-2: #ec4899;
+  --aurora-3: #fb7185;
+
+  --text-primary: #fff7ed;
+  --text-muted: #d9b4a6;
+  --text-faint: #a17d72;
+
+  --accent: #fb7185;
+  --accent-soft: rgba(251, 113, 133, 0.20);
+  --accent-contrast: #1a0c0a;
+}
