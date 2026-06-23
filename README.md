@@ -6,12 +6,13 @@
 
 Animated · glassmorphic · free. No login, no backend — just your public GitHub data.
 
-[![Live Demo](https://img.shields.io/badge/live-demo-7c3aed?style=for-the-badge)](https://gitbento.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/live-demo-7c3aed?style=for-the-badge)](https://erik-automatizaciones.github.io/gitbento/)
 [![Made with HTML/CSS/JS](https://img.shields.io/badge/vanilla-HTML%20%C2%B7%20CSS%20%C2%B7%20JS-06b6d4?style=for-the-badge)](#tech)
 [![License: MIT](https://img.shields.io/badge/license-MIT-10b981?style=for-the-badge)](LICENSE)
 
-<!-- Record a short demo (Peek / Kooha on Linux) and drop it here -->
-![gitbento demo](assets/demo.gif)
+![gitbento — Aurora, Midnight & Sunset themes](assets/themes-triptych.png)
+
+<!-- Want a moving demo? Record one with Peek / Kooha on Linux and swap in assets/demo.gif -->
 
 </div>
 
@@ -59,12 +60,12 @@ themes/           # aurora.css · midnight.css · sunset.css
 
 ## Add to your profile in 3 steps
 
-1. Open **[gitbento](https://gitbento.vercel.app/)** and generate your card.
+1. Open **[gitbento](https://erik-automatizaciones.github.io/gitbento/)** and generate your card.
 2. Click **Copy for README** to grab the Markdown embed.
 3. Paste it into your `README.md` on `github.com/<you>/<you>`. Done.
 
 ```md
-![your GitHub card](https://gitbento.vercel.app/?user=YOUR_USERNAME)
+![your GitHub card](https://erik-automatizaciones.github.io/gitbento/?user=YOUR_USERNAME)
 ```
 
 ## Run locally

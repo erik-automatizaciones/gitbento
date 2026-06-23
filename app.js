@@ -4,7 +4,7 @@
 const API = "https://api.github.com";
 const THEMES = ["aurora", "midnight", "sunset"];
 const STORE_THEME = "gitbento-theme";
-const FALLBACK_ORIGIN = "https://gitbento.vercel.app/";
+const FALLBACK_ORIGIN = "https://erik-automatizaciones.github.io/gitbento/";
 
 // GitHub Linguist colors for the most common languages (fallback: accent).
 const LANG_COLORS = {
