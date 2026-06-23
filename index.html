@@ -109,7 +109,8 @@
 
   <canvas id="confetti" class="confetti-layer" aria-hidden="true"></canvas>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- foreignObject-based DOM→PNG: renders CSS grid + glass faithfully (html2canvas can't) -->
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.js"></script>
   <script type="module" src="app.js"></script>
 </body>
 </html>

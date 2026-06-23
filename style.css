@@ -536,15 +536,16 @@ a {
   overflow: hidden;
 }
 .lang__fill {
+  display: block;
   height: 100%;
   border-radius: 999px;
   width: var(--pct, 0%);
-  transform-origin: left;
+  min-width: 6px; /* keep tiny percentages visible */
   animation: lang-grow 0.9s var(--ease) both;
 }
 @keyframes lang-grow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
+  from { width: 0; }
+  to   { width: var(--pct, 0%); }
 }
 
 /* -------- since cell -------- */

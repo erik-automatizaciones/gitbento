@@ -1,5 +1,5 @@
 // gitbento — fetch GitHub data, render a bento card, export as PNG.
-// Vanilla ES module. Only external dependency: html2canvas (loaded in index.html).
+// Vanilla ES module. Only external dependency: html-to-image (loaded in index.html).
 
 const API = "https://api.github.com";
 const THEMES = ["aurora", "midnight", "sunset"];
@@ -316,7 +316,7 @@ async function generateCard(rawName) {
 
 async function downloadPNG() {
   if (!currentUser) return;
-  if (typeof html2canvas === "undefined") {
+  if (!window.htmlToImage) {
     setStatus("Image export failed to load. Check your connection and refresh.", true);
     return;
   }
@@ -326,21 +326,23 @@ async function downloadPNG() {
   downloadBtn.disabled = true;
   label.textContent = "Rendering…";
 
+  const options = {
+    pixelRatio: 2, // retina-quality
+    cacheBust: true,
+    backgroundColor: getComputedStyle(card).backgroundColor,
+  };
+
   try {
-    const canvas = await html2canvas(card, {
-      scale: 2,
-      useCORS: true,
-      allowTaint: false,
-      backgroundColor: getComputedStyle(card).backgroundColor,
-      logging: false,
-    });
+    // First pass warms up font/image embedding; second pass is reliably complete.
+    await window.htmlToImage.toPng(card, options);
+    const dataUrl = await window.htmlToImage.toPng(card, options);
     const link = document.createElement("a");
     link.download = `${currentUser.login}-gitbento.png`;
-    link.href = canvas.toDataURL("image/png");
+    link.href = dataUrl;
     link.click();
     confettiBurst();
   } catch (_) {
-    setStatus("Couldn’t render the PNG (avatar may block cross-origin). Try a screenshot instead.", true);
+    setStatus("Couldn’t render the PNG. Try again, or take a screenshot.", true);
   } finally {
     downloadBtn.disabled = false;
     label.textContent = original;

@@ -48,8 +48,10 @@ profile README.
 ## Tech
 
 Pure **HTML + CSS + vanilla JS** (ES modules). Zero build step. The only dependency is
-[`html2canvas`](https://html2canvas.hertzen.com/) (via CDN) for PNG export. Data comes from
-the public **GitHub REST API v3** — no token required.
+[`html-to-image`](https://github.com/bubkoo/html-to-image) (via CDN) for PNG export — it uses
+the browser's own rendering (SVG `foreignObject`), so the exported card matches the live one
+pixel-for-pixel (CSS grid, glassmorphism and all). Data comes from the public
+**GitHub REST API v3** — no token required.
 
 ```
 index.html        # markup + meta/SEO
@@ -89,9 +91,8 @@ PRs welcome! Good first contributions:
 - More language colors in `LANG_COLORS` (`app.js`)
 - New bento cells (most-starred repo, contribution streak, etc.)
 
-Keep it dependency-free (html2canvas aside), use the existing CSS custom properties for all
-colors, and make sure the PNG export still looks right (`backdrop-filter` doesn't render in
-html2canvas — translucent `rgba` backgrounds do).
+Keep it dependency-free (html-to-image aside), use the existing CSS custom properties for all
+colors, and check that the PNG export still looks right after layout changes.
 
 ## License
 
